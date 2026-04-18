@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-    <title>CADReview: Automatically Reviewing CAD Programs with Error Detection and Correction</title>
+    <title><span class="small-caps">CADMate</span>: Generating CAD Assembly Plan with Geometric Chain-of-Thought and Spatial Physical Rewards</title>
     <link rel="icon" type="image/x-icon" href="static/images/recad_icon.png">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
     rel="stylesheet">
@@ -126,6 +126,11 @@
     #gradio pre {
       background-color: transparent;
     }
+
+    .small-caps {
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+    }
   </style>
 
 
@@ -134,38 +139,40 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">CADReview</h1>
-            <h2 class="subtitle is-3 publication-subtitle">Automatically Reviewing CAD Programs with<br>Error Detection and Correction</h2>
-            <h5 class="subtitle is-5 publication-awards">ACL 2025 Oral 🌟</h5>
+            <h1 class="title is-1 publication-title"><span class="small-caps">CADMate</span></h1>
+            <h2 class="subtitle is-3 publication-subtitle">Generating CAD Assembly Plan with Geometric Chain-of-Thought and Spatial Physical Rewards</h2>
+            <h5 class="subtitle is-5 publication-awards">ACL 2026 Main 🌟</h5>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://gary-code.github.io/" target="_blank">Jiali Chen<sup>1,*</sup></a>,</span>
+                <a href="https://gary-code.github.io/" target="_blank">Jiali Chen<sup>1,2,3,4</sup></a>,</span>
                   <span class="author-block">
-                <a href="https://github.com/black1948" target="_blank">Xusen Hei<sup>1,*</sup></a>,</span>
+                <a href="https://github.com/Saga1718" target="_blank">Dingba Fu<sup>1,2,3</sup></a>,</span>
                   <span class="author-block">
-                    <a href="https://github.com/Popping007" target="_blank">HongFei Liu<sup>1</sup></a>,</span>
+                <a href="https://github.com/black1948" target="_blank">Xusen Hei<sup>1,2,3</sup></a>,</span>
                   <span class="author-block">
-                    <a href="https://github.com/wyclike/" target="_blank">Yuancheng Wei<sup>1</sup></a>,</span>
+                    <a href="https://github.com/cvYHang" target="_blank">Yuhang Liu<sup>1,2,3</sup></a>,</span>
                   <span class="author-block">
-                    <a href="https://zkdeng.org/" target="_blank">Zikun Deng<sup>1</sup></a>,</span>
+                    <a href="https://github.com/yyChen-sylvia" target="_blank">Yiyang Chen<sup>1</sup></a>,</span>
                   <span class="author-block">
-                    <a href="https://openreview.net/profile?id=~Jiayuan_Xie1" target="_blank">Jiayuan Xie<sup>2</sup></a>,</span>
+                    <a href="https://openreview.net/profile?id=~Jiayuan_Xie1" target="_blank">Jiayuan Xie<sup>4</sup></a>,</span>
                   <span class="author-block">
-                    <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=ej3Nb5wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Yi Cai<sup>1</sup></a>,</span>
-                  <span class="author-block">
-                    <a href="https://www.polyu.edu.hk/comp/people/academic-staff/prof-li-qing/" target="_blank">Li Qing<sup>2</sup></a>
+                    <a href="https://wenqifan03.github.io/" target="_blank">Wenqi Fan<sup>4</sup></a>,</span>
+                  <span class="author-block">                    
+                    <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=ej3Nb5wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Yi Cai<sup>2,1,3*</sup></a>,</span>
                   </span>
                 </span>
               </div>
 
                 <div class="is-size-5 publication-authors">
-                  <span class="author-block"><sup>1</sup>South China University of Technology</span><br>
-                  <span class="author-block"><sup>2</sup>The Hong Kong Polytechnic University</span><br>
+                  <span class="author-block"><sup>1</sup>School of Software Engineering, South China University of Technology</span><br>
+                  <span class="author-block"><sup>2</sup>Key Laboratory of Big Data and Intelligent Robot, Ministry of Education</span><br>
+                  <span class="author-block"><sup>3</sup>Joint Guangdong-Hong Kong-Macao Research Laboratory of Big Data and Robotic Intelligence, Ministry of Education</span><br>
+                  <span class="author-block"><sup>4</sup>The Hong Kong Polytechnic University</span><br>
                 </div>
 
                 <div class="is-size-6 publication-authors">
-                  <span class="eql-cntrb"><small><sup>*</sup>Equal Contribution</small></span>
+                  <span class="eql-cntrb"><small><sup>*</sup>Corresponding author</small></span>
                 </div>
 
                 <div class="column has-text-centered">
@@ -173,23 +180,25 @@
                       <!-- Arxiv PDF link -->
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/2505.22304.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
                     <!-- ArXiv abstract Link -->
                     <span class="link-block">
                       <a href="https://arxiv.org/abs/2505.22304" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
+                      class="external-link button is-normal is-rounded is-dark"
+                      style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
                     <!-- Supplementary PDF link -->
                     <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
@@ -203,7 +212,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/Gary-code/CADReview" target="_blank"
+                    <a href="https://github.com/Gary-code/CADMate" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -214,7 +223,8 @@
                 <!-- Dataset Link. -->
                 <span class="link-block">
                   <a href="https://huggingface.co/datasets/Garygedegege/CADReview"
-                    class="external-link button is-normal is-rounded is-dark">
+                    class="external-link button is-normal is-rounded is-dark"
+                    style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
                     <span class="icon" style="display: inline-flex; align-items: center;">
                         <p style="font-size:18px; margin: 0; line-height: 1;">🤗</p>
                     </span>
@@ -239,7 +249,7 @@
               width: 80%;
               margin: 0 auto;
               text-align: center;">
-      TLDR: CADReview benchmarks MLLMs' ability to correct CAD programs with refernece images.
+      TLDR: <span class="small-caps">CADMate</span> enables MLLMs to assemble CAD objects from reference images and disassembled parts.
     </p>
   </div>
 </section>
@@ -250,10 +260,10 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <p>
-        <img src="static/images/intro_case.png" alt="Introduction Case" class="blend-img-background center-image" style="max-width: 65%; height: auto; display: block; margin: 0 auto;">
+        <img src="static/images/cadmate/intro_case.png" alt="Introduction Case" class="blend-img-background center-image" style="max-width: 55%; height: auto; display: block; margin: 0 auto;">
       </p>
       <h2 class="has-text-centered is-size-5">
-        <p>Overview of different ways (i.e., designer, GPT-4o and our ReCAD) to CAD review. </p> 
+        <p>Overview of different ways (i.e., designer and our <span class="small-caps">CADMate</span>) to CAD assembly. </p> 
       </h2>
     </div>
   </div>
@@ -268,12 +278,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Computer-aided design (CAD) is crucial in prototyping 3D objects through geometric instructions (i.e., CAD programs).
-            In practical design workflows, designers often engage in time-consuming reviews and refinements of these prototypes by comparing them with reference images.
-            To bridge this gap, we introduce the CAD review task to automatically detect and correct potential errors, ensuring consistency between the constructed 3D objects and reference images. 
-            However, recent advanced multimodal large language models (MLLMs) struggle to recognize multiple geometric components and perform spatial geometric operations within the CAD program, leading to inaccurate reviews. 
-            In this paper, we propose the CAD program repairer (ReCAD) framework to effectively detect program errors and provide helpful feedback on error correction. Additionally, we create a dataset, CADReview, consisting of over 20K program-image pairs, with diverse errors for the CAD review task. 
-            Extensive experiments demonstrate that our ReCAD significantly outperforms existing MLLMs, which shows great potential in design applications.
+            Computer-aided design (CAD) is crucial in prototyping complex 3D objects through precise geometric modeling. 
+            In practical design workflows, designers manually define assembly sequences for individual CAD parts, a process that is both time-consuming and expertise-intensive. 
+            To address this challenge, we formulate CAD assembly as a parametric action prediction task: given a reference design image and disassembled parts, the model predicts 6-DoF transformations (\ie, actions) to progressively assemble each part. 
+            This paradigm enables multimodal large language models (MLLMs) to solve the task through autoregressive action generation. 
+            While recent MLLMs demonstrate promising spatial reasoning, they struggle with fine-grained geometric structure understanding and physical collision avoidance during assembly. 
+            In this paper, we propose <span class="small-caps">CADMate</span>, an MLLM-based framework for sequential CAD assembly action generation. 
+            Our training strategy comprises three stages: (i) CAD domain adaptation for spatial geometry and position understanding, (ii) supervised fine-tuning with geometric chain-of-thought (CoT) reasoning for action generation, and (iii) reinforcement learning with spatial-physical rewards jointly optimize spatial accuracy and collision avoidance. 
+            Additionally, we also construct <em>CADBuilder</em> dataset, comprising over 45<em>K</em> CAD assemblies with annotated action sequences. Our experiments demonstrate that <span class="small-caps">CADMate</span> significantly outperforms existing prominent MLLMs (<em>e.g.</em>, GPT-5), showing great potential in design applications.
           </p>
         </div>
       </div>
@@ -282,47 +294,65 @@
 </section>
 <!-- End paper abstract -->
 
-
 <!-- Dataset Overview -->
 <section class="section hero teaser">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3">CADReview Dataset</h2>
+        <h2 class="title is-3"><em>CADBuilder</em> Dataset</h2>
         <div class="content has-text-justified">
         </div>
       </div>
     </div>
   </div>
+
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
         <div class="content">
 
           <p class="mb-3">
-            The <strong>CADReview</strong> dataset is introduced to support the CAD review task—automatically detecting and correcting errors in CAD programs based on reference images. This task is fundamentally challenging for current multimodal large language models (MLLMs) due to the intricate alignment required between code and 3D geometry. The major challenges include:
+            The <strong><em>CADBuilder</em></strong> dataset is introduced to support the task of 
+            <strong>sequential CAD assembly action prediction</strong>, where models reconstruct complete 3D objects 
+            from disassembled parts by predicting step-by-step 6-DoF transformations. 
+            This task is challenging for multimodal large language models (MLLMs) due to:
           </p>
 
           <ul class="mb-4">
-            <li><strong>Component-level reasoning:</strong> 3D objects consist of multiple geometric components, each mapped to specific code blocks that must be interpreted accurately.</li>
-            <li><strong>Internal structure analysis:</strong> Some errors occur in visually hidden internal components, demanding programmatic analysis rather than visual inspection alone.</li>
-            <li><strong>Precise code transformation:</strong> Correcting errors requires geometric reasoning and spatial transformations reflected directly in the code (e.g., translation, rotation).</li>
+            <li><strong>Fine-grained geometric understanding:</strong> Accurate interpretation of part shapes and spatial constraints.</li>
+            <li><strong>Sequential assembly reasoning:</strong> Multi-step, state-dependent decision making.</li>
+            <li><strong>Physical feasibility:</strong> Ensuring collision-free and executable assembly trajectories.</li>
           </ul>
 
           <p class="mb-3">
-            To facilitate progress in this domain, we construct the CADReview dataset with the following characteristics:
+            <em>CADBuilder</em> is constructed as a large-scale parametric dataset with the following characteristics:
           </p>
 
           <ul class="mb-4">
-            <li><strong>Large-scale and diverse:</strong> Comprising <strong>20K program-image pairs</strong>, the dataset includes both human-made and machine-generated CAD programs with realistic and diverse 3D object structures.</li>
-            <li><strong>Error-rich examples:</strong> Each program may contain one or more of <strong>eight distinct error types</strong> (e.g., logic, primitive, position, constant), covering real-world failure modes in CAD design workflows.</li>
-            <li><strong>High geometric complexity:</strong> Human-made programs feature advanced constructs such as macros, control flows, and boolean operations.</li>
-            <li><strong>Multiview reference images:</strong> Every sample is paired with three rendered design drawings from varied viewpoints to enhance visual alignment and support complex error detection.</li>
+            <li><strong>Large-scale and diverse:</strong> Over <strong>45K CAD assemblies</strong> collected from real-world datasets, covering diverse object structures.</li>
+
+            <li><strong>Multi-level assembly complexity:</strong> Each object contains <strong>2 to 15 parts</strong>, including:
+              <ul>
+                <li>2–5 parts: 35,483 samples</li>
+                <li>6–10 parts: 7,302 samples</li>
+                <li>11–15 parts: 2,276 samples</li>
+              </ul>
+            </li>
+
+            <li><strong>Rich multimodal representation:</strong> Each sample includes a reference image, disassembled parts, and initial 6-DoF poses.</li>
+
+            <li><strong>Action-centric annotation:</strong> Provides assembly action sequences as relative 6-DoF transformations for each part.</li>
+
+            <li><strong>Physically grounded trajectories:</strong> Assembly sequences are generated via physics-based simulation and verified for collision-free feasibility.</li>
+
+            <li><strong>High-quality rendering:</strong> Reference images are rendered with carefully selected viewpoints to preserve structural details.</li>
           </ul>
 
           <p class="mb-3">
-            Overall, CADReview serves as a comprehensive benchmark for evaluating AI systems on real-world CAD program review tasks, emphasizing both accuracy and spatial reasoning.
+            Overall, <em>CADBuilder</em> serves as a comprehensive benchmark for evaluating multimodal models on 
+            <strong>geometric reasoning, sequential planning, and physically feasible CAD assembly</strong>.
           </p>
+
         </div>
       </div>
     </div>
@@ -331,33 +361,25 @@
     <div id="results-carousel" class="carousel results-carousel">
       <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
         <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/app_case.png" alt="Dataset Overview" style="width: 95%; height: auto; object-fit: contain;"/>
+          <img src="static/images/cadmate/diverse_3d_objects.png" alt="Dataset Overview" style="width: 95%; height: auto; object-fit: contain;"/>
         </div>
         <h5 class="is-size-6 has-text-centered mt-4">
-          Overview of diverse 3D objects in our CADReview dataset.
+          Overview of diverse 3D objects in our <em>CADBuilder</em> dataset.
         </h5>
       </div>
       <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
         <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/app_pro_case.jpg" alt="Dataset Examples" style="width: 95%; height: auto; object-fit: contain;"/>
+          <img src="static/images/cadmate/case_study.png" alt="Dataset Examples" style="width: 60%; height: auto; object-fit: contain;"/>
         </div>
         <h5 class="is-size-6 has-text-centered mt-4">
-          Human-made and machine-made CAD programs from our CADReview dataset.
-        </h5>
-      </div>
-      <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
-        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-          <img src="static/images/cad_error_type.png" alt="Error Types" style="width: 95%; height: auto; object-fit: contain;"/>
-        </div>
-        <h5 class="is-size-6 has-text-centered mt-4">
-          Each types of errors in CAD programs.
+          Key assembly steps from different methods.
         </h5>
       </div>
     </div>
     <br>
     <br>
     <div class="columns is-centered has-text-centered">
-      <h4 class="title is-4">CADReview Annotation Pipeline</h4>
+      <h4 class="title is-4"><em>CADBuilder</em> Annotation Pipeline</h4>
     </div>
     <div class="columns is-vcentered mt-5">
       <div class="column is-6">
@@ -369,7 +391,7 @@
                 <span class="icon has-text-primary">
                   <i class="fas fa-circle"></i>
                 </span>
-                <span class="is-size-6">Collecting Program-Image Pairs</span>
+                <span class="is-size-6">Collecting Reference Images for an Assembly</span>
               </span>
             </li>
             <li class="mb-5">
@@ -377,7 +399,7 @@
                 <span class="icon has-text-primary">
                   <i class="fas fa-circle"></i>
                 </span>
-                <span class="is-size-6">Creating Error on CAD Programs</span>
+                <span class="is-size-6">Constructing an Assembly Trajectory</span>
               </span>
             </li>
             <li class="mb-5">
@@ -385,24 +407,24 @@
                 <span class="icon has-text-primary">
                   <i class="fas fa-circle"></i>
                 </span>
-                <span class="is-size-6">Annotating Feedback on CAD Program</span>
+                <span class="is-size-6">Building a representation of each part</span>
               </span>
             </li>
           </ul>
         </div>
       </div>
       <div class="column is-6">
-        <img id="Annotation" width="100%" src="static/images/dataset_cons.jpg" alt="CADReview Annotation">
+        <img id="Annotation" width="100%" src="static/images/cadmate/dataset.png" alt="CADReview Annotation">
       </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <!-- ReCAD Framework. -->
+  <!-- CADMate Framework -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
-      <h2 class="title is-3">ReCAD Framework</h2>
+      <h2 class="title is-3"><span class="small-caps">CADMate</span> Framework</h2>
     </div>
   </div>
   
@@ -410,33 +432,63 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
+
           <p>
-            To tackle the CAD review task—automatically detecting and correcting errors in CAD programs based on reference images—we propose <strong>ReCAD</strong>, a multimodal large language model (MLLM)-based framework.
-            ReCAD consists of two key components: a <strong>feedback generator</strong> and a <strong>code editor</strong>, both built upon a shared MLLM backbone.
+            To address the challenging task of <strong>sequential CAD assembly</strong>, we propose <strong><span class="small-caps">CADMate</span></strong>, 
+            a multimodal large language model (MLLM)-based framework that formulates CAD assembly as 
+            <strong>autoregressive action generation</strong>. 
+            Given a reference design image and disassembled parts, <span class="small-caps">CADMate</span> predicts step-by-step 
+            <strong>6-DoF transformations</strong> to progressively assemble the complete object.
           </p>
+
           <p>
-            The feedback generator first aligns geometric components in the 3D object with their corresponding code blocks, then produces textual feedback identifying erroneous blocks and describing the error types.
-            This is enabled by a <strong>Geometric Component Recognition (GCR)</strong> mechanism, which enhances the model's ability to reason about both visual and symbolic geometry.
+            <span class="small-caps">CADMate</span> integrates a <strong>vision encoder</strong>, a <strong>large language model</strong>, and a 
+            <strong>vision-language projector</strong>, enabling joint reasoning over visual inputs and geometric representations. 
+            The model operates in a <strong>multi-turn interactive manner</strong>, where each step observes the current assembly state 
+            and generates the next action for a selected CAD part.
           </p>
+
           <p>
-            The code editor takes the generated feedback as guidance and performs program-level geometric transformations (e.g., translation, rotation) to correct the erroneous CAD code.
-            To support this, we introduce a <strong>Spatial Geometric Operation (SGO)</strong> mechanism that helps the model learn fine-grained spatial manipulation within CAD programs.
+            A key component of <span class="small-caps">CADMate</span> is the incorporation of <strong>Geometric Chain-of-Thought (Geo-CoT)</strong> reasoning, 
+            which explicitly models:
           </p>
+
+          <ul>
+            <li><strong>Part-level geometric descriptions:</strong> capturing shape, size, and structural attributes of each component.</li>
+            <li><strong>Assembly constraints:</strong> reasoning about how parts fit together based on geometric compatibility.</li>
+          </ul>
+
           <p>
-            Each module in ReCAD integrates a vision encoder, a large language model, and a vision-language projector. 
-            We apply a two-stage supervised fine-tuning process, followed by reinforcement learning with task-specific reward functions based on <em>error diagnostics</em> and <em>visual similarity</em> between the predicted and reference 3D renderings.
+            This structured reasoning enables the model to perform fine-grained spatial understanding and 
+            generate physically plausible assembly actions in a sequential decision-making process.
           </p>
+
+          <p>
+            To further ensure realistic assembly behavior, <span class="small-caps">CADMate</span> incorporates a simulation-in-the-loop mechanism, 
+            where predicted actions are executed to update the assembly state, and collision detection is performed 
+            to enforce physical feasibility.
+          </p>
+
           <br>
           <div style="text-align: center;">
-            <img id="pipeline_framework" width="100%" src="./static/images/recad_framework.png" alt="Detailed ReCAD Architecture">
+            <img id="pipeline_framework" width="100%" src="./static/images/cadmate/cadmate_framework.png" alt="CADMate Framework Overview">
           </div>
           <br>
           <br>
+
           <p>
-            Our experiments show that ReCAD significantly outperforms both commercial and open-source MLLMs on the CADReview dataset, especially in accurately aligning CAD code with visual components and generating high-quality corrections.
+            To effectively train the model, we adopt a <strong>three-stage training strategy</strong>: 
+            (i) <strong>Spatial Perception Adaptation</strong> to enhance geometric understanding and 6-DoF pose awareness in the CAD domain; 
+            (ii) <strong>Supervised Fine-Tuning with Geometric Chain-of-Thought</strong> to learn multi-turn assembly reasoning and action generation; 
+            and (iii) <strong>Reinforcement Learning with Spatial-Physical Rewards</strong> to jointly optimize spatial accuracy and collision-free feasibility.
           </p>
+
+          <p>
+            Extensive experiments demonstrate that <span class="small-caps">CADMate</span> significantly improves geometric reasoning, sequential decision-making, and physical plausibility in CAD assembly, outperforming existing multimodal large language models across varying levels of assembly complexity.
+          </p>
+
           <div style="text-align: center;">
-            <img id="experiment" width="100%" src="./static/images/experiment.png" alt="Experiment Results">
+            <img id="experiment" width="100%" src="./static/images/cadmate/cadmate_exp.png" alt="Experiment Results">
           </div>
         </div>
       </div>
@@ -444,7 +496,51 @@
   </div>
 </section>
 
+<!-- CADMate Case Studies -->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3">Some <span class="small-caps">CADMate</span> Case Studies</h2>
+    </div>
+  </div>
 
+  <div class="container is-max-desktop">
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+          <img src="static/images/cadmate/case_1.png" alt="Error Types" style="width: 90%; height: auto; object-fit: contain;"/>
+        </div>
+        <h5 class="is-size-6 has-text-centered mt-4">
+          A case of generated actions with geometric CoT and rendered assembly process for our <span class="small-caps">CADMate</span>-8B.
+        </h5>
+      </div>
+      <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+          <img src="static/images/cadmate/case_2.png" alt="Error Types" style="width: 90%; height: auto; object-fit: contain;"/>
+        </div>
+        <h5 class="is-size-6 has-text-centered mt-4">
+          A case of generated actions with geometric CoT and rendered assembly process for our <span class="small-caps">CADMate</span>-8B.
+        </h5>
+      </div>
+      <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+          <img src="static/images/cadmate/case_3.png" alt="Error Types" style="width: 90%; height: auto; object-fit: contain;"/>
+        </div>
+        <h5 class="is-size-6 has-text-centered mt-4">
+          A case of generated actions with geometric CoT and rendered assembly process for our <span class="small-caps">CADMate</span>-8B.
+        </h5>
+      </div>
+      <div class="item" style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 500px;">
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+          <img src="static/images/cadmate/case_4.png" alt="Error Types" style="width: 90%; height: auto; object-fit: contain;"/>
+        </div>
+        <h5 class="is-size-6 has-text-centered mt-4">
+          A representative failure case from <span class="small-caps">CADMate</span>-8B. 
+        </h5>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--BibTex citation -->
@@ -452,11 +548,12 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-        @article{chen2025cadreview,
+        <!-- @article{chen2025cadreview,
         title={CADReview: Automatically Reviewing CAD Programs with Error Detection and Correction},
         author={Jiali Chen, Xusen Hei, HongFei Liu, Yuancheng Wei, Zikun Deng, Jiayuan Xie, Yi Cai, Li Qing},
         year={2025},
-        }</code></pre>
+        } -->
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
